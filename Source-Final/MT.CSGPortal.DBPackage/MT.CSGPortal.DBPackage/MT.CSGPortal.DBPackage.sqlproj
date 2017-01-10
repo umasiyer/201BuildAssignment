@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MT.CSGPortal.DBPackage</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{243472cf-242d-4340-b54f-fc3ead4587df}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MT.CSGPortal.DBPackage</RootNamespace>
+    <AssemblyName>MT.CSGPortal.DBPackage</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Snapshots" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ALLOCATION_REQUEST.sql" />
+    <Build Include="dbo\Tables\ARTIFACT.sql" />
+    <Build Include="dbo\Tables\ARTIFACT_CATEGORY.sql" />
+    <Build Include="dbo\Tables\ARTIFACT_CATEGORY_REL.sql" />
+    <Build Include="dbo\Tables\ARTIFACT_TAG.sql" />
+    <Build Include="dbo\Tables\ARTIFACT_TYPE.sql" />
+    <Build Include="dbo\Tables\ASSIGNMENT.sql" />
+    <Build Include="dbo\Tables\ASSIGNMENT_TYPE.sql" />
+    <Build Include="dbo\Tables\CONTACT_TYPE.sql" />
+    <Build Include="dbo\Tables\CUSTOMER.sql" />
+    <Build Include="dbo\Tables\ELMAH_Error.sql" />
+    <Build Include="dbo\Tables\EVENT.sql" />
+    <Build Include="dbo\Tables\EVENT_TYPE.sql" />
+    <Build Include="dbo\Tables\MENTOR.sql" />
+    <Build Include="dbo\Tables\MENTOR_PROGRAM_DETAIL.sql" />
+    <Build Include="dbo\Tables\MENTOR_PROGRAM_TYPE.sql" />
+    <Build Include="dbo\Tables\MIND.sql" />
+    <Build Include="dbo\Tables\MIND_ACTIVITY.sql" />
+    <Build Include="dbo\Tables\MIND_CONTACT.sql" />
+    <Build Include="dbo\Tables\MIND_MINDROLE.sql" />
+    <Build Include="dbo\Tables\MIND_ORGANIZATION.sql" />
+    <Build Include="dbo\Tables\MIND_PROFILE_ACTIVITY.sql" />
+    <Build Include="dbo\Tables\MIND_ROLE.sql" />
+    <Build Include="dbo\Tables\MIND_TAG.sql" />
+    <Build Include="dbo\Tables\ORG_ACTIVITY.sql" />
+    <Build Include="dbo\Tables\ORG_ACTIVITY_TYPE.sql" />
+    <Build Include="dbo\Tables\ORGANIZATION_GROUP.sql" />
+    <Build Include="dbo\Tables\PRE_ASSIGNMENT.sql" />
+    <Build Include="dbo\Tables\PRE_ASSIGNMENT_ARTIFACT.sql" />
+    <Build Include="dbo\Tables\PROFILE.sql" />
+    <Build Include="dbo\Tables\PROFILE_ARTIFACT.sql" />
+    <Build Include="dbo\Tables\PROFILE_PRE_ASSIGNMENT.sql" />
+    <Build Include="dbo\Tables\PROFILE_TAG.sql" />
+    <Build Include="dbo\Tables\PROFILE_TYPE.sql" />
+    <Build Include="dbo\Tables\PUBLICATION.sql" />
+    <Build Include="dbo\Tables\PUBLICATION_TYPE.sql" />
+    <Build Include="dbo\Tables\TAG.sql" />
+    <Build Include="dbo\Tables\TAG_ASSOCIATION.sql" />
+    <Build Include="dbo\Tables\TAG_GROUP.sql" />
+    <Build Include="dbo\Tables\WORK_UNIT.sql" />
+    <Build Include="dbo\Tables\WORK_UNIT_ARTIFACT.sql" />
+    <Build Include="dbo\Tables\WORK_UNIT_MIND.sql" />
+    <Build Include="dbo\Tables\WORK_UNIT_TAG.sql" />
+    <Build Include="dbo\Tables\WORKUNIT_TYPE.sql" />
+    <Build Include="Security\CSGDbUser.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_GetErrorsXml.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_GetErrorXml.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_LogError.sql" />
+    <Build Include="dbo\Stored Procedures\sp_get_mindprofile.sql" />
+    <Build Include="dbo\Stored Procedures\SP_INSERT_MINDDETAILS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_FetchActiveMIds.sql" />
+    <Build Include="dbo\Stored Procedures\USP_FetchMIds.sql" />
+    <Build Include="dbo\Stored Procedures\USP_FetchMindContacts.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GetAllMinds.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GetMindById.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveContact.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveContactOld.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveMind.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveProfile.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GetArchitectCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_IsMindInPortal.sql" />
+    <Build Include="dbo\User Defined Types\UDTT_MindContact.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MT.CSGPortal.DBPackage.publish.xml">
+      <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </None>
+    <None Include="Snapshots\MT.CSGPortal.DBPackage.dacpac">
+      <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

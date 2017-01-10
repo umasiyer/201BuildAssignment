@@ -1,0 +1,36 @@
+﻿CREATE PROCEDURE [dbo].[USP_SaveContactOld]
+@Mid varchar(12),
+@MindContactTypeId int,
+@ContactText varchar(50)
+
+AS
+SET NOCOUNT ON
+
+BEGIN
+
+IF NOT EXISTS(SELECT TOP 1 MID FROM MIND_CONTACT WHERE MID=@Mid AND CONTACT_TYPE_ID=@MindContactTypeId)
+BEGIN
+	IF @ContactText IS NOT NULL
+	INSERT INTO MIND_CONTACT(
+		MID,
+		CONTACT_TYPE_ID,
+		CONTACT_TEXT
+	)
+	VALUES(
+		@Mid,
+		@MindContactTypeId,
+		@ContactText
+	)
+END
+ELSE
+BEGIN
+IF @ContactText IS NOT NULL AND @ContactText<>''
+	UPDATE MIND_CONTACT
+		SET
+			CONTACT_TEXT=@ContactText
+		WHERE MID=@Mid AND CONTACT_TYPE_ID=@MindContactTypeId
+ELSE
+	DELETE FROM MIND_CONTACT
+		WHERE MID=@Mid AND CONTACT_TYPE_ID=@MindContactTypeId
+END
+END
